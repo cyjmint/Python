@@ -2,6 +2,7 @@ N = int(input())
 n = [int(input()) for i in range(N)]
 
 def merge_sort(arr):
+    
     def sort(low, high):
         if high - low < 2:
             return
@@ -13,7 +14,6 @@ def merge_sort(arr):
     def merge(low, mid, high):
         temp = []
         l, h = low, mid
-
         while l < mid and h < high:
             if arr[l] < arr[h]:
                 temp.append(arr[l])
@@ -21,14 +21,14 @@ def merge_sort(arr):
             else:
                 temp.append(arr[h])
                 h += 1
-
+                
         while l < mid:
             temp.append(arr[l])
             l += 1
         while h < high:
             temp.append(arr[h])
             h += 1
-
+            
         for i in range(low, high):
             arr[i] = temp[i - low]
 
